@@ -27,7 +27,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-mongoose.connect('mongodb://localhost:27017/itic-internship', { useNewUrlParser: true});
+mongoose.connect('mongodb://heroku_mongo_pharsa:p@ssw0rds@ds359298.mlab.com:59298/heroku_xjnb6cqr', { useNewUrlParser: true});
 var db = mongoose.connection;
 
 if(!db)
