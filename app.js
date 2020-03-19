@@ -13,7 +13,8 @@ var books =require('./routes/books');
 var personRouter =require('./routes/persons');
 var organisationRouter =require('./routes/organisations');
 
-const APP_BASE_ROUTE = "/api/v1"
+var config_data = require('./config/config.development.json')
+const APP_BASE_ROUTE = config_data.APP_BASE_ROUTE
 
 var app = express();
 
@@ -27,7 +28,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-mongoose.connect('mongodb://mlab_mongo_pharsa:Passw0rds@ds359298.mlab.com:59298/heroku_xjnb6cqr', { useNewUrlParser: true});
+mongoose.connect(config_data.db_server, { useNewUrlParser: true});
 var db = mongoose.connection;
 
 if(!db)
