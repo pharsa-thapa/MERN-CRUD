@@ -35,7 +35,7 @@ if(!db)
     console.log("Error connecting db")
 else
     console.log("Db connected successfully")
-
+    
 app.use(cors());
 
 app.use(APP_BASE_ROUTE + '/books', books);
