@@ -2,6 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="337e752b-0247-411d-b6a5-ed638d32772c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/config.development.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/config.production.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
     </list>
@@ -23,8 +26,13 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/config" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/config" />
+    </key>
   </component>
   <component name="ServiceViewManager">
     <option name="viewStates">
@@ -64,9 +72,10 @@
       <screen x="0" y="23" width="1440" height="794" />
     </state>
     <state x="540" y="59" width="900" height="722" key="SettingsEditor/0.23.1440.794@0.23.1440.794" timestamp="1583206349367" />
-    <state x="374" y="254" key="com.intellij.ide.util.TipDialog" timestamp="1583191421203">
-      <screen x="0" y="23" width="1440" height="794" />
+    <state x="374" y="253" key="com.intellij.ide.util.TipDialog" timestamp="1584577102490">
+      <screen x="0" y="23" width="1440" height="790" />
     </state>
+    <state x="374" y="253" key="com.intellij.ide.util.TipDialog/0.23.1440.790@0.23.1440.790" timestamp="1584577102490" />
     <state x="374" y="254" key="com.intellij.ide.util.TipDialog/0.23.1440.794@0.23.1440.794" timestamp="1583191421203" />
     <state x="375" y="189" width="689" height="462" key="find.popup" timestamp="1583199823248">
       <screen x="0" y="23" width="1440" height="794" />
