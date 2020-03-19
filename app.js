@@ -28,14 +28,14 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-mongoose.connect(config_data.db_server, { useNewUrlParser: true});
+mongoose.connect(config_data.db_server, { useNewUrlParser: true, useUnifiedTopology: true});
 var db = mongoose.connection;
 
 if(!db)
     console.log("Error connecting db")
 else
     console.log("Db connected successfully")
-    
+
 app.use(cors());
 
 app.use(APP_BASE_ROUTE + '/books', books);
