@@ -1,5 +1,4 @@
 {
-  "port": 8080,
-  "db_server": "'mongodb://mlab_mongo_pharsa:Passw0rds@ds359298.mlab.com:59298/heroku_xjnb6cqr'",
+  "db_server": "mongodb://localhost:27017/itic-internship",
   "APP_BASE_ROUTE" : "/api/v1"
 }
