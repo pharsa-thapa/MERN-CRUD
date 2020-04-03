@@ -1,5 +1,5 @@
 {
-  "db_server": "'mongodb://mlab_pharsa:Passw0rds61254748846@ds359298.mlab.com:59298/heroku_xjnb6cqr'",
+  "db_server": "mongodb://mlab_pharsa:Passw0rds@ds053194.mlab.com:53194/heroku_mwr4dqzn",
   "APP_BASE_ROUTE" : "/api/v1",
   "SENDGRID_API_KEY" : "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",
   "port": 8000,
