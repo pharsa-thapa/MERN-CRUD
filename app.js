@@ -13,9 +13,9 @@ var books =require('./routes/books');
 var personRouter =require('./routes/persons');
 var organisationRouter =require('./routes/organisations');
 
-var config_data = require('./config/config.development.json')
+var config_data = require('./config')()
 const APP_BASE_ROUTE = config_data.APP_BASE_ROUTE
-
+console.log(config_data)
 var app = express();
 
 // view engine setup

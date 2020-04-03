@@ -7,7 +7,9 @@ const PersonSchema = new Schema({
     age : { type : Number },
     email : { type : String, trim : true, maxlength :100, required: [true, 'Your Email cannot be blank.'],unique: [true, "Email already taken"] },
     location : { type : String, trim : true , maxlength:100 },
-    created_at : { type : Date, default: Date.now }
+    created_at : { type : Date, default: Date.now },
+   //static organisation id set as default
+    organisation : { type: Schema.Types.ObjectId, ref: 'organisations', default : '5e872dea01143f08e1180146' }
 
 });
 

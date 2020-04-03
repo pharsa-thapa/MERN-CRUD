@@ -2,9 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="337e752b-0247-411d-b6a5-ed638d32772c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/helpers/emailHelper.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/helpers/emailTemplateHelper.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/email-templates/registration-html.jade" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/email-templates/registration-text.jade" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/config.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/config.development.json" beforeDir="false" afterPath="$PROJECT_DIR$/config/config.development.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/config.production.json" beforeDir="false" afterPath="$PROJECT_DIR$/config/config.production.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/organisationModel.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/organisationModel.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/personModel.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/personModel.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/organisations.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/organisations.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/persons.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/persons.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,13 +35,15 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/config" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/views" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/views" />
       <recent name="$PROJECT_DIR$/config" />
     </key>
   </component>
@@ -58,9 +73,10 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state x="424" y="230" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1583209417858">
-      <screen x="0" y="23" width="1440" height="794" />
+    <state x="424" y="235" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1585799017626">
+      <screen x="0" y="0" width="1440" height="900" />
     </state>
+    <state x="424" y="235" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1440.900@0.0.1440.900" timestamp="1585799017626" />
     <state x="424" y="230" key="#com.intellij.fileTypes.FileTypeChooser/0.23.1440.794@0.23.1440.794" timestamp="1583209417858" />
     <state x="426" y="124" key="NewModule_or_Project.wizard" timestamp="1583285658827">
       <screen x="0" y="23" width="1440" height="794" />
@@ -70,9 +86,10 @@
       <screen x="0" y="23" width="1440" height="794" />
     </state>
     <state x="540" y="59" width="900" height="722" key="SettingsEditor/0.23.1440.794@0.23.1440.794" timestamp="1583206349367" />
-    <state x="374" y="253" key="com.intellij.ide.util.TipDialog" timestamp="1584577102490">
-      <screen x="0" y="23" width="1440" height="790" />
+    <state x="374" y="262" key="com.intellij.ide.util.TipDialog" timestamp="1585883708029">
+      <screen x="0" y="0" width="1440" height="900" />
     </state>
+    <state x="374" y="262" key="com.intellij.ide.util.TipDialog/0.0.1440.900@0.0.1440.900" timestamp="1585883708029" />
     <state x="374" y="253" key="com.intellij.ide.util.TipDialog/0.23.1440.790@0.23.1440.790" timestamp="1584577102490" />
     <state x="374" y="254" key="com.intellij.ide.util.TipDialog/0.23.1440.794@0.23.1440.794" timestamp="1583191421203" />
     <state x="375" y="189" width="689" height="462" key="find.popup" timestamp="1583199823248">
