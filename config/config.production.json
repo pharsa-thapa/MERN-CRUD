@@ -4,5 +4,6 @@
   "SENDGRID_API_KEY" : "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",
   "port": 8000,
   "connection_string" : "localhost",
-  "SENDGRID_SENDER_EMAIL" : "mail.pharsa.thapa@gmail.com"
+  "SENDGRID_SENDER_EMAIL" : "mail.pharsa.thapa@gmail.com",
+  "DEFAULT_ORGANISATION" : "5e87357039d1e0001706c6f1"
 }
