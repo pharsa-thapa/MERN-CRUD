@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
+var config_data = require('../config')()
 
 const PersonSchema = new Schema({
     username : { type : String, trim : true, maxlength : 32, required: [true, 'Your username cannot be blank.'],unique: [true, "Username already taken"]},
@@ -9,7 +10,7 @@ const PersonSchema = new Schema({
     location : { type : String, trim : true , maxlength:100 },
     created_at : { type : Date, default: Date.now },
    //static organisation id set as default
-    organisation : { type: Schema.Types.ObjectId, ref: 'organisations', default : '5e872dea01143f08e1180146' }
+    organisation : { type: Schema.Types.ObjectId, ref: 'organisations', default : config_data.DEFAULT_ORGANISATION }
 
 });
 
