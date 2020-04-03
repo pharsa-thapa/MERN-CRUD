@@ -2,10 +2,6 @@
 let config = null;
 
 module.exports = ()=>{
-    // if the static data was already set. return it
-    if(config_data != null && config_data != undefined) {
-            return config_data
-    }
 
     config_data = {}
 

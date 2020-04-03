@@ -1,6 +1,29 @@
 var express = require("express");
 var router = express.Router();
 var personModel = require("../models/personModel")
+var emailHelper = require('../helpers/emailHelper')
+var emailTemplateHelper = require("../helpers/emailTemplateHelper")
+
+router.post("/",function (req, res){
+    personModel.create(req.body)
+    .then(function (newPerson){
+        personModel.findById(newPerson._id)
+        .populate("organisation")
+        .then(function(newPerson){
+            body = emailTemplateHelper.registrationTemplate(newPerson.name, newPerson.organisation.name );
+            emailHelper.sendMail(newPerson.email, "Welcome", body.text, body.html);
+            res.json(newPerson);
+        })
+    })
+    .catch(function (err){
+        if (err.name == 'ValidationError') {
+            res.status(422).json(err);
+        }else{
+            console.error(err);
+            res.status(500).json(err);
+        }
+    })
+});
 
 router.get("/", function(req, res, next){
     personModel.find({}, function(err, persons) {
@@ -24,23 +47,6 @@ router.get("/:id", function(req, res, next){
               }
         }
     });
-});
-
-router.post("/",function (req, res){
-    personModel.create(req.body)
-    .then(function (newPerson){
-        console.log("New Person" + newPerson);
-        res.json(newPerson);
-    })
-    .catch(function (err){
-        if (err.name == 'ValidationError') {
-            console.log("validation errors", err);
-            res.status(422).json(err);
-        }else{
-            console.error(err);
-            res.status(500).json(err);
-        }
-    })
 });
 
 router.delete("/:id", function(req, res){

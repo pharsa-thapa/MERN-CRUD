@@ -63,8 +63,6 @@ router.delete("/:id", function(req, res){
 
 router.put('/:id', function(req, res){
     var query = {'_id': req.params.id};
-    console.log(req.body.employees);
-
     organisationModel.findOneAndUpdate(query, req.body, {upsert: true}, function(err, updatedOrganisation) {
         if (err) return res.status(500).json({error: err});
         return res.json({"message": 'Succesfully saved.', "organisation": updatedOrganisation});
