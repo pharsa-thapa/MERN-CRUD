@@ -4,6 +4,35 @@ var personModel = require("../models/personModel")
 var emailHelper = require('../helpers/emailHelper')
 var emailTemplateHelper = require("../helpers/emailTemplateHelper")
 
+/**
+ * @swagger
+ * tags:
+ *   name: Persons
+ *   description: User management
+ */
+
+/**
+ * @swagger
+ * path:
+ *  /persons/:
+ *    post:
+ *      summary: Create a new person
+ *      tags: [Persons]
+ *      requestBody:
+ *        required: true
+ *        content:
+ *          application/json:
+ *            schema:
+ *              $ref: '#/components/schemas/Person'
+ *      responses:
+ *        "200":
+ *          description: A user schema
+ *          content:
+ *            application/json:
+ *              schema:
+ *                $ref: '#/components/schemas/Person'
+ */
+
 router.post("/",function (req, res){
     personModel.create(req.body)
     .then(function (newPerson){
@@ -25,6 +54,28 @@ router.post("/",function (req, res){
     })
 });
 
+/**
+ * @swagger
+ * path:
+ *  /persons/{personId}:
+ *    get:
+ *      summary: Get a person by id
+ *      tags: [Persons]
+ *      parameters:
+ *        - in: path
+ *          name: personId
+ *          schema:
+ *            type: string
+ *          required: true
+ *          description: Id of the person
+ *      responses:
+ *        "200":
+ *          description: A Person object
+ *          content:
+ *            application/json:
+ *              schema:
+ *                $ref: '#/components/schemas/Person'
+ */
 router.get("/", function(req, res, next){
     let getParam = (req.organisationId !== undefined ) ? { organisation : req.organisationId } : {};
     personModel.find( getParam , function(err, persons) {
