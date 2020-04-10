@@ -26,10 +26,11 @@
  *            type: string
  *            description: ID of existing organisation.
  *        example:
- *           username : SSuresh-thapa,
- *           name : SSuresh Thapa,
- *           email : mail.pharsa.thapa@gmail.com
+ *           username : pharsa-thapa,
+ *           name : Pharsa Thapa,
+ *           email : suresh.thapa.mgr.45@gmail.com
  *           location : Sydney
+ *           organisation : 5e872dea01143f08e1180146
  */
 
 const mongoose = require("mongoose");
