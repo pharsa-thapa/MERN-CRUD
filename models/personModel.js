@@ -1,3 +1,37 @@
+/**
+ * @swagger
+ *  components:
+ *    schemas:
+ *      Person:
+ *        type: object
+ *        required:
+ *          - name
+ *          - email
+ *          - username
+ *        properties:
+ *          name:
+ *            type: string
+ *          username:
+ *            type: string
+ *            description: Email for the user, needs to be unique.
+ *          location:
+ *            type: string
+ *          email:
+ *            type: string
+ *            format: email
+ *            description: Email for the user, needs to be unique.
+ *          age:
+ *            type: number
+ *          organisation:
+ *            type: string
+ *            description: ID of existing organisation.
+ *        example:
+ *           username : SSuresh-thapa,
+ *           name : SSuresh Thapa,
+ *           email : mail.pharsa.thapa@gmail.com
+ *           location : Sydney
+ */
+
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 var config_data = require('../config')()
