@@ -11,6 +11,7 @@ const PersonSchema = new Schema({
     created_at : { type : Date, default: Date.now },
    //static organisation id set as default
     organisation : { type: Schema.Types.ObjectId, ref: 'organisations', default : config_data.DEFAULT_ORGANISATION }
+//    organisation : { type: Schema.Types.ObjectId, ref: 'organisations' }
 
 });
 

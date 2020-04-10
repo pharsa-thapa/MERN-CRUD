@@ -5,18 +5,13 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var mongoose = require('mongoose');
 var cors = require('cors');
-
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
-var apiBase = require('./routes/apiBase');
-var books =require('./routes/books');
-var personRouter =require('./routes/persons');
-var organisationRouter =require('./routes/organisations');
-
+var router = require('./routes')
 var config_data = require('./config')()
+
+var app = express();
+
 const APP_BASE_ROUTE = config_data.APP_BASE_ROUTE
 console.log(config_data)
-var app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -37,12 +32,7 @@ else
     console.log("Db connected successfully")
 
 app.use(cors());
-
-app.use(APP_BASE_ROUTE + '/books', books);
-app.use(APP_BASE_ROUTE + '/users', usersRouter);
-app.use(APP_BASE_ROUTE + '/persons', personRouter);
-app.use(APP_BASE_ROUTE + '/organisations', organisationRouter);
-app.use(APP_BASE_ROUTE , apiBase);
+app.use(APP_BASE_ROUTE + '/', router);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
