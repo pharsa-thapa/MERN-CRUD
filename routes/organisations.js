@@ -1,6 +1,12 @@
 var express = require("express");
 var router = express.Router();
+var personRouter = require("./persons")
 var organisationModel = require("../models/organisationModel");
+
+router.use('/:id/persons', function(req, res, next) {
+                           req.organisationId = req.params.id;
+                           next()
+                         }, personRouter);
 
 router.get("/", function(req, res, next){
     organisationModel.find({}, function(err, organisations) {
@@ -69,21 +75,21 @@ router.put('/:id', function(req, res){
     });
 });
 
-
-router.get("/:id/persons", function(req, res){
-    organisationModel.findById(req.params.id)
-    .populate("employees")
-
-    .then(function( organisation) {
-            if(organisation == undefined ){
-               res.status(404).json({"error" : true,"message" : "Record not found"});
-            }else{
-               res.json(organisation);
-            }
-    })
-    .catch(function(err){
-        res.status(422).json({"error" : true,"message" : "Error fetching data"});
-    });
-});
+//
+//router.get("/:id/persons", function(req, res){
+//    organisationModel.findById(req.params.id)
+//    .populate("employees")
+//
+//    .then(function( organisation) {
+//            if(organisation == undefined ){
+//               res.status(404).json({"error" : true,"message" : "Record not found"});
+//            }else{
+//               res.json(organisation);
+//            }
+//    })
+//    .catch(function(err){
+//        res.status(422).json({"error" : true,"message" : "Error fetching data"});
+//    });
+//});
 
 module.exports = router;
