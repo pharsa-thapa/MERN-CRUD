@@ -24,8 +24,8 @@ const options = {
       description:
         "A test project to understand how easy it is to document and Express API",
       license: {
-        name: "MIT",
-        url: "https://choosealicense.com/licenses/mit/"
+//        name: "MIT",
+//        url: "https://choosealicense.com/licenses/mit/"
       },
       contact: {
         name: "Swagger",
@@ -35,7 +35,7 @@ const options = {
     },
     servers: [
       {
-        url: "http://localhost:8000/api/v1/"
+        url: "https://pharsa-company-services.herokuapp.com/api/v1/"
       }
     ]
   },
