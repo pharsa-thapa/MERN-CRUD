@@ -28,14 +28,14 @@ const options = {
 //        url: "https://choosealicense.com/licenses/mit/"
       },
       contact: {
-        name: "Swagger",
-        url: "https://swagger.io",
-        email: "Info@SmartBear.com"
+//        name: "Swagger",
+//        url: "https://swagger.io",
+//        email: "Info@SmartBear.com"
       }
     },
     servers: [
       {
-        url: "https://pharsa-company-services.herokuapp.com/api/v1/"
+        url: "http://localhost:8000/api/v1/"
       }
     ]
   },

@@ -47,11 +47,28 @@ router.post("/",function (req, res){
     .catch(function (err){
         if (err.name == 'ValidationError') {
             res.status(422).json(err);
+        }else if (err.name == 'MongoError') {
+            let fieldName = ("email" in err.keyPattern) ? "email" : "username";
+            let customError = { error: "Duplicate Entry", field: fieldName, message: fieldName.charAt(0).toUpperCase() + fieldName.slice(1) + " is already taken." }
+            res.status(500).json(customError);
         }else{
-            console.error(err);
+            let customError = { error: "Unknown Error",  message: "Unknown error!" }
             res.status(500).json(err);
+
         }
     })
+});
+
+
+router.get("/", function(req, res, next){
+    let getParam = (req.organisationId !== undefined ) ? { organisation : req.organisationId } : {};
+    personModel.find( getParam , function(err, persons) {
+        if (err) {
+           res.json({"error" : "Internal Sever Error"});
+        } else {
+           res.json(persons);
+        }
+    });
 });
 
 /**
@@ -76,17 +93,6 @@ router.post("/",function (req, res){
  *              schema:
  *                $ref: '#/components/schemas/Person'
  */
-router.get("/", function(req, res, next){
-    let getParam = (req.organisationId !== undefined ) ? { organisation : req.organisationId } : {};
-    personModel.find( getParam , function(err, persons) {
-        if (err) {
-           res.json({"error" : "Internal Sever Error"});
-        } else {
-           res.json(persons);
-        }
-    });
-});
-
 router.get("/:id", function(req, res, next){
     let getParam = { _id : req.params.id } ;
     if (req.organisationId !== undefined ) { getParam.organisation = req.organisationId}
