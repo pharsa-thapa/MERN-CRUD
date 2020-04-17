@@ -50,6 +50,6 @@ const PersonSchema = new Schema({
 //    organisation : { type: Schema.Types.ObjectId, ref: 'organisations' }
 
 });
-PersonSchema.plugin(uniqueValidator, { message: '{PATH} already exists!' });
+PersonSchema.plugin(uniqueValidator, { message: '{PATH} is already taken!' });
 module.exports  = mongoose.model("persons", PersonSchema);
 
