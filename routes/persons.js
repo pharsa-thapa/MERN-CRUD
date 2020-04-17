@@ -48,8 +48,14 @@ router.post("/",function (req, res){
         if (err.name == 'ValidationError') {
             res.status(422).json(err);
         }else if (err.name == 'MongoError') {
-            let fieldName = ( err.keyPattern !== undefined && "email" in err.keyPattern) ? "email" : "username";
-            let customError = { error: "Duplicate Entry", field: fieldName, message: fieldName.charAt(0).toUpperCase() + fieldName.slice(1) + " is already taken." }
+            let fieldName = ""
+            if( err.keyPattern !== undefined) {
+                if ("email" in err.keyPattern) {
+                    fieldName = "email";
+                }else{ fieldName = "username";
+                }
+            }
+            customError = { error: "Duplicate Entry", field: fieldName, message: fieldName.charAt(0).toUpperCase() + fieldName.slice(1) + " is already taken." }
             res.status(500).json(customError);
         }else{
             let customError = { error: "Unknown Error",  message: "Unknown error!" }
