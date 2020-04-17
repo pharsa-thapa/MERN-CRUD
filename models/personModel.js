@@ -35,6 +35,7 @@
 
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
+var uniqueValidator = require('mongoose-unique-validator');
 var config_data = require('../config')()
 
 const PersonSchema = new Schema({
@@ -49,6 +50,6 @@ const PersonSchema = new Schema({
 //    organisation : { type: Schema.Types.ObjectId, ref: 'organisations' }
 
 });
-
+PersonSchema.plugin(uniqueValidator, { message: '{PATH} already exists!' });
 module.exports  = mongoose.model("persons", PersonSchema);
 
