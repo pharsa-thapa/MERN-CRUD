@@ -48,7 +48,8 @@ router.post("/",function (req, res){
         if (err.name == 'ValidationError') {
             res.status(422).json(err);
         }else if (err.name == 'MongoError') {
-            let fieldName = ""
+            console.log(err);
+            let fieldName = "";
             if( err.keyPattern !== undefined) {
                 if ("email" in err.keyPattern) {
                     fieldName = "email";
