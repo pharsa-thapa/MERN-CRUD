@@ -47,7 +47,7 @@ router.post("/",function (req, res){
     .catch(function (err){
         if (err.name == 'ValidationError') {
             res.status(422).json(err);
-        }}else{
+        }else{
             let customError = { error: "Unknown Error",  message: "Unknown error!" }
             res.status(500).json(err);
 
