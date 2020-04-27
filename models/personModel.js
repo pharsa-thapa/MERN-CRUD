@@ -42,9 +42,24 @@ const PersonSchema = new Schema({
     username : { type : String, trim : true, maxlength : 32, required: [true, 'Your username cannot be blank.'],unique: [true, "Username already taken"]},
     name : { type : String, trim : true, maxlength : 400, required: [true, 'Name cannot be blank.'] },
     age : { type : Number },
-    email : { type : String, trim : true, maxlength :100, required: [true, 'Your Email cannot be blank.'],unique: [true, "Email already taken"] },
+    email : { type : String, trim : true, maxlength :100, validate: {
+                                                                   validator: function(v) {
+                                                                       var re = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i;
+                                                                       return (v == null || v.trim().length < 1) || re.test(v)
+                                                                   },
+                                                                   message: 'Provided email address is invalid!'
+                                                               },unique: [true, "Email already taken"] },
     location : { type : String, trim : true , maxlength:100 },
     created_at : { type : Date, default: Date.now },
+    phone    : { type: String,/*not required by default**/
+                     validate: {
+                         validator: function(v) {
+                             var re = /^[A-Z0-9._%+-]/i;
+                             return (v == null || v.trim().length < 1) || re.test(v)
+                         },
+                         message: 'Provided phone number is invalid!'
+                     }
+        },
    //static organisation id set as default
     organisation : { type: Schema.Types.ObjectId, ref: 'organisations', default : config_data.DEFAULT_ORGANISATION }
 //    organisation : { type: Schema.Types.ObjectId, ref: 'organisations' }
