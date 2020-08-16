@@ -1,0 +1,9 @@
+{
+  "db_server": "#your_mongo_db_url",
+  "APP_BASE_ROUTE" : "/api/v1",
+  "SENDGRID_API_KEY" : "#your_sendgrid_api_key",
+  "port": 8000,
+  "connection_string" : "localhost",
+  "SENDGRID_SENDER_EMAIL" : "#your_sendgrid_sender_email",
+  "DEFAULT_ORGANISATION" : "5e872dea01143f08e1180146"
+}
