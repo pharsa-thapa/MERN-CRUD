@@ -1,6 +1,5 @@
 
-const API_BASE_URL = 'https://pharsa-company-services.herokuapp.com/api/v1/';
-//const API_BASE_URL = 'http://localhost:8000/api/v1/'
+const API_BASE_URL = 'http://localhost:8000/api/v1/'
 const PERSON_URL = API_BASE_URL + "persons/";
 const ORGANISATION_URL = API_BASE_URL + "organisations/"
 
