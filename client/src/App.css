@@ -1,0 +1,129 @@
+.App {
+  /*text-align: center;*/
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  /*min-height: 100vh; */
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  /*justify-content: center;*/
+  font-size: calc(50px + 2vmin);
+  color: white;
+  font :
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width:100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.modal-main {
+  position:fixed;
+  background: white;
+  width: 80%;
+  height: auto;
+  top:50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+}
+
+.display-block {
+  display: block;
+}
+
+.display-none {
+  display: none;
+}
+
+
+/* Header */
+header{
+    background: #3AAFA9;
+    position: fixed;
+    width:100%;
+    z-index: 1030;
+    padding: 10px !important;
+    min-height: calc(80px + 2vmin);
+}
+
+header h1{
+    color:white;
+    font-style: italic;
+    font-family: Didot, Didot LT STD, Hoefler Text, Garamond, Times New Roman, serif;
+
+    margin-left: 3%;
+    display: inline-block;
+    float: left;
+}
+
+nav{
+    width:100%;
+}
+
+.menu a {
+    list-style-type: none;
+    display: inline-block;
+    border-right : 1px solid white;
+    padding : 0% 1%;
+}
+
+.menu a:last-child{
+    border-right: 0px;
+}
+
+.menu a:hover{
+    background:#fff;
+    color : #3AAFA9;
+}
+
+
+.content {
+    width:100%;
+    background:#F1F1F1;
+    display:block;
+    overflow:auto;
+    /*padding-top:1%;*/
+}
+.wrapper {
+    height: auto;
+    padding: 5%;
+    margin-top: 5rem !important;
+ }
+
+ .force-pull-right{
+    float:right !important;
+ }
+
+.btn-span{
+width:4px;
+}
