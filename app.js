@@ -11,8 +11,6 @@ var config_data = require('./config')()
 var app = express();
 
 const APP_BASE_ROUTE = config_data.APP_BASE_ROUTE
-console.log(config_data)
-
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');

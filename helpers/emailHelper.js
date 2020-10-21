@@ -12,7 +12,14 @@ var sendMail = function sendMail( to, subject, body, body_html){
               html: body_html,
             };
 
-        console.log(sgMail.send(msg));
+       sgMail
+         .send(msg)
+         .then(() => {
+           console.log('Email sent')
+         })
+         .catch((error) => {
+           console.error(error)
+         })
 };
 
 module.exports = { sendMail: sendMail };
